@@ -16,7 +16,6 @@
         <div class="mb-3">
             <label for="category" class="form-label">Category</label>
             <select class="form-select" name="category_id">
-                {{-- <option value=''>Select any category.</option> --}}
                 @foreach ($categories as $category)
                     <option value={{ $category->id }} @if ($article->category_id == $category->id)
                         selected
@@ -26,7 +25,8 @@
         </div>
         <div class="mb-3">
             <label for=image" class="form-label">Image</label>
-            <img src="" alt="" srcset="">
+            <br>
+            <img src={{ url('/uploads/' . $article->image) }} alt="{{ $article->image }}" height="100" width="100">
             <br>
             <input type="file" id="image" name="image" accept=".png,.jpg,.jpeg,.img" />
         </div>

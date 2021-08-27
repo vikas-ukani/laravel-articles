@@ -22,8 +22,8 @@ Route::get('/', function () {
 // Route::view('home', 'home');
 Route::get('home', [ArticleController::class, 'index'])->name('home');
 
-Route::get('create-article', [ArticleController::class,'createArticle'])->name('createArticle');
+Route::get('create-article', [ArticleController::class, 'createArticle'])->name('createArticle');
 Route::post('storeArticle', [ArticleController::class, 'storeArticle'])->name('storeArticle');
 
-Route::view('edit-article/{id}', 'edit-article');
-Route::post('updateArticle', [ArticleController::class, 'updateArticle'])->name('updateArticle');
+Route::get('edit-article/{article}', [ArticleController::class, 'editArticle'])->name('edit-article');
+Route::put('updateArticle/{article}', [ArticleController::class, 'updateArticle'])->name('updateArticle');
